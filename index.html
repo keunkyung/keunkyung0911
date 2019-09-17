@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>당신의 혈중알코올 농도를 계산해드립니다.</title>
+	<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+	<style type="text/css">
+		body{text-align: center; display: block; padding-top: 50px;}
+		input{background: #c0bfbf; 
+			font-size: 16px;
+			text-align: center;
+			padding: 10px;
+			border: none;
+			box-shadow: 0px 0px 4px gray inset;
+			border-color: green;
+			border-radius: 30px;}
+		h1{font-size: 48px;
+		   font-family: 'Noto Sans KR', sans-serif;
+		   font-weight: bold;
+		   float: center;
+		   font-color: black;
+		   padding-right: 15px;
+		   padding-left: 15px;	
+		   padding-top: 10px;
+		   border: none;
+		  }
+		 h2{font-size: 24px;
+		 	font-family: 'Noto Sans KR', sans-serif;
+		 	font-weight: none;
+		 	float: center;
+		 	}
+		 h3{font-size: 16px;
+		 	font-family: 'Noto Sans KR', sans-serif;
+		 	padding-bottom: 0px;}
+		 h4{font-size: 36px;
+		 	font-weight: bold;
+		 	font-family: 'Noto Sans KR', sans-serif;
+		 	}
+		 div.myalcohole{background-color: white;
+		 				padding: 20px;}
+	</style>
+</head>
+<body>
+	<h1>당신의 혈중알코올 농도는?</h1><br><br>
+
+	<h2>
+	<input type="text" placeholder="이름을 입력하세요" id="myn" >
+	님의 혈중알코올 농도를 계산해 봅시다.
+	</h2>
+	<br>
+	<br>
+	
+	<div class="myalcohole">
+	<h3>주류의 알코올농도(%)</h3>
+	<input type="text" id="myadegree" placeholder="농도(%)" min="0" max="60">
+	<div id="myad" style="text-align: center;"></div>
+	<br>
+	<br>
+	
+	<h3>섭취한 알코올의 양(ml)</h3>
+	<input type="text" id="myaamount" placeholder="섭취량(ml)" min="0" max="30000">
+	<div id="myaa" style="text-align: center;"></div>
+	<br>
+	<br>
+	
+	<h3>체중(kg)</h3>
+	<input type="text" id="myweight" placeholder="무게(kg)" min="40" max="150">
+	<div id="myw" style="text-align: center;"></div>
+	<br>
+	<br>
+	</div>
+
+
+	<h4><div id="monitor">000님의 혈중알코올 농도는 000%입니다.</div></h4>
+   <input type="button" value="확인" id="malcohol"><br><br>
+   <script>
+
+      malcohol.onclick = function(){
+         malcohol.innerHTML = malcohol.value;
+         var salcohol = (myadegree.value*myaamount.value*0.8)/(0.6*myweight.value*1000);
+         monitor.innerHTML = myn.value + "님, 당신의 혈중알코올 농도는" + "&nbsp;" + salcohol + "%입니다.";
+      }
+
+
+
+	</script>
+</body>
+</html>
